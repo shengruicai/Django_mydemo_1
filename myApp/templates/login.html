@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<!doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+<title>社区民警工作经费使用管理系统</title>
+<script type="text/javascript" src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+  <link href="{% static 'css/common.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+<body class="body-login">
+<div class="login">
+  <img src="{% static 'css/images/login-logo.png' %}" class="login_img">
+  <ul>
+      <h5>社区民警工作经费<br/>使用管理系统</h5>
+      <h4 style="display: none">社区经费管家</h4>
+      <form action="{% url 'login_view' %}" method="post">
+        {% csrf_token %}
+        <li style="display: none">
+         <h5 style=" font-size: 16px;">登录</h5>
+        </li>
+        <li>
+          <input type="text" name="username" placeholder="用户名"/>
+        </li>
+        <span id="red">{{msg}}</span>
+        <li>
+          <input type="password" name="password" placeholder="密码"/>
+        </li>
+        <!-- <a href="index.html" class="login-btn"><a>-->
+        <input type="submit" class="login-btn" value="">
+      </form>
+    </ul>
+    <p>欢迎登陆－<a>经费使用服务系统</a></p>
+</div>
+<div class="copyright">技术支持：南京数坤信息科技有限公司</div>
+</body>
+</html>
